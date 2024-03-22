@@ -1,5 +1,6 @@
 import Banner from "../Components/Banner";
 import CategoryList from "../Components/CategoryList";
+import FeaturedJobs from "../Components/FeaturedJobs";
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <CategoryList></CategoryList>
+            <FeaturedJobs></FeaturedJobs>
             
         </div>
     );

@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
-import CategoryCard from "./CategoryCard";
+import JobsCard from "./JobsCard";
 
-const CategoryList = () => {
 
-    const [categorys, setCategorys] = useState([]);
+const FeaturedJobs = () => {
+    const [jobs,setJobs]=useState([]);
 
     useEffect(() => {
-        fetch(`categories.json`)
+        fetch(`jobs.json`)
             .then(res => res.json())
-            .then(data => setCategorys(data))
+            .then(data => setJobs(data))
 
     }, [])
-
-    // console.log(categorys);
 
     return (
         <div>
@@ -20,15 +18,15 @@ const CategoryList = () => {
                 <h1 className="text-4xl font-bold text-center mb-5">Featured Jobs</h1>
                 <p className="font-medium text-gray-400 text-center mb-9">Explore thousands of job opportunities with all the information you need. Its your future</p>
             </div>
-            <div className=" grid gap-3 grid-cols-1 lg:grid-cols-4 mb-32">
+            <div className=" grid gap-3 grid-cols-1 lg:grid-cols-2 mb-32">
                 {
-                    categorys.map((category) => <CategoryCard category={category} key={category.id} > </CategoryCard>)
+                    jobs.map((job) =>  <JobsCard key={job.id} job={job}> </JobsCard> )
                 }
 
             </div>
-
+            
         </div>
     );
 };
 
-export default CategoryList
+export default FeaturedJobs;
