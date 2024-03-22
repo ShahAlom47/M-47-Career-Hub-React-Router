@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const JobsCard = ({job}) => {
-    const {id,logo,job_title,company_name,remote_or_onsite,location,job_type,salary}=job;
+    const {logo,job_title,company_name,remote_or_onsite,location,job_type,salary}=job;
     console.log(company_name);
     return (
         <div className="border-4 p-10 ">
@@ -24,3 +25,7 @@ const JobsCard = ({job}) => {
 };
 
 export default JobsCard;
+JobsCard.propTypes = {
+    job : PropTypes.object.isRequired,
+        
+};

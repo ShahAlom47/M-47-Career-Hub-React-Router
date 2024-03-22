@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 
 const CategoryCard = ({category}) => {
-    const {id,category_name,availability,logo}=category;
+    const {category_name,availability,logo}=category;
     return (
         <div className='p-9 bg-slate-100'>
             <img className='w-16 h-16 mb-5' src={logo} alt="" />
