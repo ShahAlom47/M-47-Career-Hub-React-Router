@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 const JobsCard = ({job}) => {
-    const {logo,job_title,company_name,remote_or_onsite,location,job_type,salary}=job;
-    console.log(company_name);
+    const {id,logo,job_title,company_name,remote_or_onsite,location,job_type,salary}=job;
+    // console.log(id);
     return (
         <div className="border-4 p-10 ">
             <img className="mb-8" src={logo} alt="" />
@@ -19,7 +19,7 @@ const JobsCard = ({job}) => {
                 <p className="font-semibold text-xl text-gray-500 ">{location}</p>
                 <p className="font-semibold text-xl text-gray-500 ">Salary : {salary}</p>
             </div>
-            <Link><button className=" btn px-6 p-btn">View Details</button></Link>
+            <Link to={`/JobDetail/${id} `}><button className=" btn px-6 p-btn">View Details</button></Link>
         </div>
     );
 };
