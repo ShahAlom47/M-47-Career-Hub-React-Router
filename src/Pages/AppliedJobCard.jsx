@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import { AiOutlineDollarCircle } from "react-icons/ai";
+import { CiLocationOn } from "react-icons/ci";
+
 const AppliedJobCard = ({ data }) => {
               
-    const { id, logo, job_title,company_name,remote_or_onsite,job_type,location, job_description, job_responsibility, educational_requirements, experiences, contact_information, salary } = data;
+    const { id, logo, job_title,company_name,remote_or_onsite,job_type,location, salary } = data;
 
     return (
         <div className="grid grid-cols-12 gap-4 border-2 mb-6 p-5">
@@ -19,8 +22,8 @@ const AppliedJobCard = ({ data }) => {
 
             </div>
             <div className="flex gap-4 my-3 shrink">
-                <p className="font-semibold text-xl text-gray-500 ">{location}</p>
-                <p className="font-semibold text-xl text-gray-500 ">Salary : {salary}</p>
+                <p className="font-semibold text-xl text-gray-500 flex items-center gap-2"><CiLocationOn /> {location}</p>
+                <p className="font-semibold text-xl text-gray-500  flex items-center gap-2 ">  <AiOutlineDollarCircle /> Salary : {salary}</p>
             </div>
             </div>
             <div className="col-span-3   flex justify-end items-center">

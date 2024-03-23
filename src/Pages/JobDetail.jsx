@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 
 import { useLoaderData, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -44,10 +47,23 @@ const JobDetail = () => {
         const isExists = localSdata.find(jobId=>jobId===id);
       
         if (!isExists) {
-           
+            toast("Successfully Applied")
             localSdata.push(id);
             localStorage.setItem('appliedID',JSON.stringify(localSdata) )
             
+        }
+        else{
+            toast.info('It is already implemented', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                // transition: Bounce,
+                });
         }
 
     }
@@ -97,7 +113,7 @@ const JobDetail = () => {
                 <Link  > <button onClick={() => navigate(-1)} className="btn px-6 p-btn  font-bold">Go Back</button> </Link>
 
             </div>
-
+            <ToastContainer />
         </div>
         //    <></>
     );

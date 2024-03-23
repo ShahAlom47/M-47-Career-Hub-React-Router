@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import JobsCard from "./JobsCard";
-import { Link } from "react-router-dom";
+
 
 
 const FeaturedJobs = () => {

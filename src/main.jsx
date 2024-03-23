@@ -10,6 +10,7 @@ import Root from './Root.jsx';
 import Home from './Pages/Home.jsx';
 import JobDetail from './Pages/JobDetail.jsx';
 import AppliedJob from './Pages/AppliedJob.jsx';
+import Blog from './Components/Blog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
 
       },
       {
