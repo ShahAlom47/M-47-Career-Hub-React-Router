@@ -16,6 +16,7 @@ background: linear-gradient(90.00deg, rgb(126, 144, 254),rgb(152, 115, 255) 100%
 }
 
 .active{
-    color: linear-gradient(90.00deg, rgb(126, 144, 254),rgb(152, 115, 255));;
+    /* color: linear-gradient(90.00deg, rgb(126, 144, 254),rgb(152, 115, 255));; */
   text-decoration: underline;
+  background:none;
 }
