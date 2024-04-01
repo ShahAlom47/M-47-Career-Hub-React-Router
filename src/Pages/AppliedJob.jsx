@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Navigate, useLoaderData } from "react-router-dom";
 import AppliedJobCard from "./AppliedJobCard";
+import { AuthContext } from "../Auth Provider/AuthProvider";
 
 
 const AppliedJob = () => {
-
+    const {user}=useContext(AuthContext)
     const jobs = useLoaderData();
 
     const getLocalData = () => {
@@ -50,7 +51,7 @@ const AppliedJob = () => {
 console.log(filterData);
 
     return (
-        <div>
+      user?  <div>
             <div className=" bg-blue-100  bg-[url(src/assets/images/bg1.png)] bg-no-repeat bg-contain pt-8 " >
                 {/* <img src="/src/assets/images/bg1.png" alt="" /> */}
                 <h1 className="font-bold text-2xl py-8 text-center">Applied Jobs </h1>
@@ -81,7 +82,7 @@ console.log(filterData);
                 }
             </div>
 
-        </div>
+        </div>: <Navigate to={'/login'}></Navigate>
     );
 }
 
